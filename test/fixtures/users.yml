@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  open_id: 1
+  nickname: MyString
+  avatar_url: MyString
+
+two:
+  open_id: 1
+  nickname: MyString
+  avatar_url: MyString
