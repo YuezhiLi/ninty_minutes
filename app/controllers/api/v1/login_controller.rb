@@ -21,6 +21,7 @@ class Api::V1::LoginController < Api::V1::BaseController
     @user.save!
     render json: {
       userId: @user.id,
+      openId: @user.open_id,
       authenticationToken: @user.authentication_token
       }
   end
