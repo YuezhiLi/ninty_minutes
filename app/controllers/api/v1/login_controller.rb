@@ -21,11 +21,11 @@ class Api::V1::LoginController < Api::V1::BaseController
     @user.save!
     @user.update(nickname: user_params["nickName"], avatar_url: user_params["avatarUrl"])
     render json: {
-      id: @user.id,
-      authentication_token: @user.authentication_token,
-      # nickname: @user.nickname,
-      # avatar_url: @user.avatar_url,
-      open_id: @user.open_id
+      userId: @user.id,
+      authenticationToken: @user.authentication_token,
+      nickName: @user.nickname,
+      avatarUrl: @user.avatar_url,
+      openId: @user.open_id
       }
   end
 
