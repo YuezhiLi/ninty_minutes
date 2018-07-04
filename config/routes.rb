@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       post '/login', to: "login#login"
+      put '/login', to: "login#get_user_info"
       resources :fields, only: [:index, :show, :create, :update, :destroy] do
         resources :hours, only: [:create]
         delete '/hours', to: "hours#destroy"
