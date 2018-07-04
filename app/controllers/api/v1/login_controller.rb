@@ -27,6 +27,10 @@ class Api::V1::LoginController < Api::V1::BaseController
 
   def get_user_info
     @current_user.update(nickname: user_params["nickName"], avatar_url: user_params["avatarUrl"])
+    render json: {
+      nickname: @current_user.nickname,
+      avatar_url: @current_user.avatar_url
+    }
   end
 
   private
