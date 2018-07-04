@@ -3,7 +3,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       post '/login', to: "login#login"
       resources :fields, only: [:index, :show, :create, :update, :destroy] do
-        resources :hours, only: [:create, :destroy]
+        resources :hours, only: [:create]
+        delete '/hours', to: "hours#destroy"
         resources :bookings, only: [:create]
       end
       resources :reservations, only: [:index, :show]
