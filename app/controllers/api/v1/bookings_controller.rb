@@ -7,7 +7,7 @@ class Api::V1::BookingsController < Api::V1::BaseController
     else
       start_time = booking_params[:start_time].to_datetime
       end_time = booking_params[:end_time].to_datetime
-      @reservation = Reservation.new(start_time: start_time, end_time: end_time)
+      @reservation = Reservation.new(start_time: start_time, end_time: end_time, field_id: params[:field_id])
       @reservation.save
       Booking.create(user_id: @current_user.id, reservation_id: @reservation.id)
       @hours = Hour.where("start_time >= ? AND end_time <= ?", start_time, end_time)
