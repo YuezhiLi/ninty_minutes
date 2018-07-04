@@ -23,8 +23,8 @@ class Api::V1::LoginController < Api::V1::BaseController
     render json: {
       id: @user.id,
       authentication_token: @user.authentication_token,
-      nickname: @user.nickname,
-      avatar_url: @user.avatar_url,
+      # nickname: @user.nickname,
+      # avatar_url: @user.avatar_url,
       open_id: @user.open_id
       }
   end
