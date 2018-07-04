@@ -32,6 +32,6 @@ class Api::V1::LoginController < Api::V1::BaseController
   private
 
   def user_params
-    params.require("userInfo").permit("nickName", "city", "avatarUrl")
+    params.require("userInfo").permit("nickName", "avatarUrl")
   end
 end
